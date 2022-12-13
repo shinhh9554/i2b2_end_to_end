@@ -1,0 +1,8 @@
+Blood	NN	B-test
+cultures	NNS	I-test
+remained	VBD	O
+negative	JJ	O
+at	IN	O
+this	DT	O
+time	NN	O
+.	.	O
