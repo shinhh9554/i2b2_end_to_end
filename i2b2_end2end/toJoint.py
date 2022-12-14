@@ -1,5 +1,6 @@
 import os
 import codecs
+import argparse
 import numpy as np
 
 
@@ -105,6 +106,15 @@ def to_joint(ner_filename, re_filename, joint_filename):
 
 
 if __name__ == '__main__':
-    to_joint("I2B2-2/valid.txt", "I2B2/valid.txt", "joint/valid.txt")
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--ner_file_path', default='')
+    parser.add_argument('--re_file_path', default='')
+    parser.add_argument('--output_file_path', default='',
+                        help="output_file_path의 디렉토리는 data 디렉토리로 설정해야 함. 그리고 기본적으로 파일명은 'train', 'valid', 'test'로 설정해야 함")
+
+    args = parser.parse_args()
+
+    to_joint(args.ner_file_path, args.re_file_path, args.output_file_path)
 
 
